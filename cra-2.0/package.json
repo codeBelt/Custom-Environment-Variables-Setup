@@ -2,6 +2,20 @@
   "name": "cra-2.0",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "---------- HELPERS -------------------------------------------------------------------------------------": "",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "eject": "react-scripts eject",
+    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
+    "start:dev": "cross-env CLIENT_ENV=development craco start",
+    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
+    "start:prod": "cross-env CLIENT_ENV=production craco start",
+    "build": "cross-env CLIENT_ENV=production craco build",
+    "---------- TESTING -------------------------------------------------------------------------------------": "",
+    "test": "cross-env CLIENT_ENV=test craco test",
+    "--------------------------------------------------------------------------------------------------------": ""
+  },
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.13.2",
@@ -13,11 +27,9 @@
     "react-scripts": "2.1.8",
     "typescript": "3.4.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@craco/craco": "4.1.0",
+    "cross-env": "5.2.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +39,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/src/environments/**",
+      "**/src/**"
+    ]
+  }
 }
