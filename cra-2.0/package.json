@@ -8,12 +8,12 @@
     "type-check:watch": "npm run type-check -- --watch",
     "eject": "react-scripts eject",
     "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
-    "start:dev": "cross-env CLIENT_ENV=development react-app-rewired start",
+    "start:dev": "cross-env CLIENT_ENV=development craco start",
     "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
-    "start:prod": "cross-env CLIENT_ENV=production react-app-rewired start",
-    "build": "cross-env CLIENT_ENV=production react-app-rewired build",
+    "start:prod": "cross-env CLIENT_ENV=production craco start",
+    "build": "cross-env CLIENT_ENV=production craco build",
     "---------- TESTING -------------------------------------------------------------------------------------": "",
-    "test": "react-scripts test",
+    "test": "cross-env CLIENT_ENV=test craco test",
     "--------------------------------------------------------------------------------------------------------": ""
   },
   "dependencies": {
@@ -28,9 +28,8 @@
     "typescript": "3.4.2"
   },
   "devDependencies": {
-    "cross-env": "5.2.0",
-    "customize-cra": "0.2.12",
-    "react-app-rewired": "2.1.1"
+    "@craco/craco": "4.1.0",
+    "cross-env": "5.2.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,12 +46,6 @@
       "!**/build/**",
       "!**/src/environments/**",
       "**/src/**"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/src/environments/"
-    ],
-    "moduleNameMapper": {
-      "environment": "<rootDir>/src/environments/test"
-    }
+    ]
   }
 }
