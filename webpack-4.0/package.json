@@ -1,0 +1,52 @@
+{
+  "name": "webpack-4.0",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "---------- HELPERS -------------------------------------------------------------------------------------": "",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "eject": "react-scripts eject",
+    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
+    "start:dev": "cross-env CLIENT_ENV=development craco start",
+    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
+    "start:prod": "cross-env CLIENT_ENV=production craco start",
+    "build": "cross-env CLIENT_ENV=production craco build",
+    "---------- TESTING -------------------------------------------------------------------------------------": "",
+    "test": "cross-env CLIENT_ENV=test craco test",
+    "--------------------------------------------------------------------------------------------------------": ""
+  },
+  "dependencies": {
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.2",
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.3",
+    "node-sass": "4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "typescript": "3.4.2"
+  },
+  "devDependencies": {
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "cross-env": "5.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/src/environments/**",
+      "**/src/**"
+    ]
+  }
+}
