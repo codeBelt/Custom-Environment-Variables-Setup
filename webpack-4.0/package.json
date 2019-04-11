@@ -1,0 +1,49 @@
+{
+  "name": "react-webpack-typescript-babel",
+  "version": "1.0.0",
+  "description": "A sample setup using React, Webpack and Babel to build TypeScript code, and using TypeScript for type-checking.",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "cross-env CLIENT_ENV=production webpack --mode=production",
+    "start": "cross-env CLIENT_ENV=development webpack-dev-server --mode=development --open"
+  },
+  "author": {
+    "name": "Alexander T.",
+    "email": "alexander.tarasyuk@outlook.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.4.3",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.3",
+    "@babel/preset-env": "7.4.3",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "babel-loader": "8.0.5",
+    "cross-env": "5.2.0",
+    "css-loader": "2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fork-ts-checker-webpack-plugin": "1.0.1",
+    "html-webpack-plugin": "3.2.0",
+    "node-sass": "4.11.0",
+    "react-svg-loader": "2.1.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "typescript": "3.4.3",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.3.1"
+  },
+  "dependencies": {
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.4",
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.3",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
+  }
+}
