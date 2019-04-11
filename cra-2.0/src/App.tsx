@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import environment from 'environment';
 
-console.log(`environment`, environment);
+console.log(environment);
 
 class App extends Component {
   render() {
