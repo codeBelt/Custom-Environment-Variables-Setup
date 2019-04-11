@@ -2,6 +2,20 @@
   "name": "cra-2.0",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "---------- HELPERS -------------------------------------------------------------------------------------": "",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "eject": "react-scripts eject",
+    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
+    "start:dev": "cross-env CLIENT_ENV=development react-app-rewired start",
+    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
+    "start:prod": "cross-env CLIENT_ENV=production react-app-rewired start",
+    "build": "cross-env CLIENT_ENV=production react-app-rewired build",
+    "---------- TESTING -------------------------------------------------------------------------------------": "",
+    "test": "react-scripts test",
+    "--------------------------------------------------------------------------------------------------------": ""
+  },
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.13.2",
@@ -13,11 +27,10 @@
     "react-scripts": "2.1.8",
     "typescript": "3.4.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "cross-env": "5.2.0",
+    "customize-cra": "0.2.12",
+    "react-app-rewired": "2.1.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +40,19 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/src/environments/**",
+      "**/src/**"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/environments/"
+    ],
+    "moduleNameMapper": {
+      "environment": "<rootDir>/src/environments/test"
+    }
+  }
 }
