@@ -1,3 +1,5 @@
+declare module '*.svg';
+
 declare module 'environment' {
   const value: {
     intervals: {
