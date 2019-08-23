@@ -6,7 +6,7 @@
 export default function (baseApi: string) {
   return {
     intervals: {
-      dashboard: 60000,
+      logout: 60000,
     },
     api: {
       dashboard: `${baseApi}/api/v1/dashboards`,
