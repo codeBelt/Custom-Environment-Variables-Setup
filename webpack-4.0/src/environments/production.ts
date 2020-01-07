@@ -1,4 +1,4 @@
-import environment from './base';
+import environment, { Environment } from './base';
 
 /*
  * base.ts is the default environment for production.
@@ -8,6 +8,8 @@ import environment from './base';
 const baseApi = '';
 const env = environment(baseApi);
 
-export default {
+const productionEnv: Environment = {
   ...env,
 };
+
+export default productionEnv;
