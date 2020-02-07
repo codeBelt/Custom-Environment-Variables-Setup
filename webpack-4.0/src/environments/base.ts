@@ -15,7 +15,7 @@ export default function baseEnv(baseApi: string) {
       error500: ``, // only used in development for this example code
     },
     token: {
-      auth: process.env.REACT_APP_AUTH_TOKEN,
+      auth: process.env.REACT_APP_AUTH_TOKEN, // Example only, don't add secrets like this!
     },
     isProduction: true,
     isDevelopment: false,
